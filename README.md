@@ -1,4 +1,4 @@
-# Web game project
+# Mobile web game project
 
 Motivation
 -------------
