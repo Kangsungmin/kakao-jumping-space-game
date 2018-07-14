@@ -17,7 +17,7 @@ Screenshots
 <img width = "200" src="https://user-images.githubusercontent.com/11826472/42720298-aa6a8044-875f-11e8-8936-f71d649fed08.png">
 </div>
 
-Tests
+Test
 -------------
 * Link: http://belogame.cafe24.com (mobile recommended.)
 
