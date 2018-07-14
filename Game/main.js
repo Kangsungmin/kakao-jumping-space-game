@@ -42,7 +42,7 @@ var play = function(){}
 play.prototype = {
 	preload:function(){
 		//TODO: 로딩페이지를 만든다.
-		//TODO: 리소스 압출 할 것.
+		//TODO: 리소스 압 할 것.
 		console.log(window.innerWidth + ' and ' + window.innerHeight);
 		game.load.image('backgroundTwinkle', "assets/background-twinkle.png");
 
@@ -64,24 +64,24 @@ play.prototype = {
 		game.load.image('star', "assets/items/star.png");
 		game.load.image('fuel_item',"assets/items/fuel.png");
 		game.load.image('fuelgauge',"assets/fuelgauge.png");
-        game.load.image('fire_emit', "assets/particles/fire_emit.png");
-        game.load.image('boost_item',"assets/items/boost.png");
-        game.load.image('button',"assets/button.png");
+		game.load.image('fire_emit', "assets/particles/fire_emit.png");
+		game.load.image('boost_item',"assets/items/boost.png");
+		game.load.image('button',"assets/button.png");
 
-        game.load.image('asteroid-small',"assets/obstacle/asteroid-small.png");
-        game.load.image('asteroid-big',"assets/obstacle/asteroid-big.png");
-        game.load.image('space-part1',"assets/obstacle/space-part1.png");
-        game.load.image('space-part2',"assets/obstacle/space-part2.png");
+		game.load.image('asteroid-small',"assets/obstacle/asteroid-small.png");
+		game.load.image('asteroid-big',"assets/obstacle/asteroid-big.png");
+		game.load.image('space-part1',"assets/obstacle/space-part1.png");
+		game.load.image('space-part2',"assets/obstacle/space-part2.png");
 
-        game.load.audio('backgroundMusic', "assets/audio/SoundEffects/era-of-space.mp3");
-        game.load.audio('star1', "assets/audio/SoundEffects/star_1.mp3");//'assets/audio/SoundEffects/starSound.ogg'
-        game.load.audio('star2', "assets/audio/SoundEffects/star_2.mp3");
-        game.load.audio('star3', "assets/audio/SoundEffects/star_3.mp3");
-        game.load.audio('boost', "assets/audio/SoundEffects/fire-spray.mp3");
-        game.load.audio('boost_constant', "assets/audio/SoundEffects/fire-spray-constant.mp3");
-        game.load.audio('kick', "assets/audio/SoundEffects/deep-kick.mp3");
+		game.load.audio('backgroundMusic', "assets/audio/SoundEffects/era-of-space.mp3");
+		game.load.audio('star1', "assets/audio/SoundEffects/star_1.mp3");//'assets/audio/SoundEffects/starSound.ogg'
+		game.load.audio('star2', "assets/audio/SoundEffects/star_2.mp3");
+		game.load.audio('star3', "assets/audio/SoundEffects/star_3.mp3");
+		game.load.audio('boost', "assets/audio/SoundEffects/fire-spray.mp3");
+		game.load.audio('boost_constant', "assets/audio/SoundEffects/fire-spray-constant.mp3");
+		game.load.audio('kick', "assets/audio/SoundEffects/deep-kick.mp3");
 
-        this.calculate();//화면 사이즈기반하여 단위 계산
+		this.calculate();//화면 사이즈기반하여 단위 계산
 	},
 	create:function(){
 		game.time.advancedTiming = true;
@@ -139,8 +139,8 @@ play.prototype = {
 			this.playButton.width = 0;
 			this.cardGroup.width = 0;
 
-	    	backgroundTwinkles = game.add.group();
-	    	backgroundTwinkles.createMultiple(10, 'backgroundTwinkle');
+			backgroundTwinkles = game.add.group();
+			backgroundTwinkles.createMultiple(10, 'backgroundTwinkle');
 
 			PlayerState = "idle";
 			this.fuelImage = game.add.sprite(this.xGap, this.yGap*2,"fuelgauge");
@@ -165,17 +165,17 @@ play.prototype = {
 			
 			left_emitter = game.add.emitter(0, 0 , 700);//x,y maxParticle
 			left_emitter.makeParticles('fire_emit');
-	    	left_emitter.setAlpha(1, .5, 300);
-	    	left_emitter.setScale(window.innerWidth/2300, window.innerWidth/400, window.innerWidth/2300, window.innerWidth/400, 1000, Phaser.Easing.Quintic.Out);
-	    	left_emitter.start(false, 400, 5);//explode, lifespan, frequency, quantity, forceQuantity
+			left_emitter.setAlpha(1, .5, 300);
+			left_emitter.setScale(window.innerWidth/2300, window.innerWidth/400, window.innerWidth/2300, window.innerWidth/400, 1000, Phaser.Easing.Quintic.Out);
+			left_emitter.start(false, 400, 5);//explode, lifespan, frequency, quantity, forceQuantity
 
-	    	right_emitter = game.add.emitter(0, 0 , 500);//x,y maxParticle
-			right_emitter.makeParticles('fire_emit');
-	    	right_emitter.setAlpha(1, .5, 300);
-	    	right_emitter.setScale(window.innerWidth/2300, window.innerWidth/400, window.innerWidth/2300, window.innerWidth/400, 1000, Phaser.Easing.Quintic.Out);
-	    	right_emitter.start(false, 400, 5);//explode, lifespan, frequency, quantity, forceQuantity
+			right_emitter = game.add.emitter(0, 0 , 500);//x,y maxParticle
+				right_emitter.makeParticles('fire_emit');
+			right_emitter.setAlpha(1, .5, 300);
+			right_emitter.setScale(window.innerWidth/2300, window.innerWidth/400, window.innerWidth/2300, window.innerWidth/400, 1000, Phaser.Easing.Quintic.Out);
+			right_emitter.start(false, 400, 5);//explode, lifespan, frequency, quantity, forceQuantity
 
-	    	stars = game.add.group();//display objects including Sprites and Images.
+			stars = game.add.group();//display objects including Sprites and Images.
 			stars.enableBody = true;
 			stars.physicsBodyType = Phaser.Physics.ARCADE; // detect collision
 			
@@ -403,10 +403,10 @@ play.prototype = {
 			backgroundTwinkle.makeParticles('backgroundTwinkle');
 			backgroundTwinkle.setAlpha(1, 0, 2000);
 			backgroundTwinkle.setScale(window.innerWidth/1000, window.innerWidth/400, window.innerWidth/1000, window.innerWidth/400, 6000, Phaser.Easing.Quintic.Out);//minX, maxX, minY, maxY, rate, ease, yoyo
-    		backgroundTwinkle.start(false, ranTime * 1000, 10);//explode, lifespan, frequency, quantity, forceQuantity
-    		backgroundTwinkle.maxParticleSpeed.setTo(0, 0);
-    		backgroundTwinkle.minParticleSpeed.setTo(0, 0);
-    		backgroundTwinkle.gravity = 0;
+			backgroundTwinkle.start(false, ranTime * 1000, 10);//explode, lifespan, frequency, quantity, forceQuantity
+			backgroundTwinkle.maxParticleSpeed.setTo(0, 0);
+			backgroundTwinkle.minParticleSpeed.setTo(0, 0);
+			backgroundTwinkle.gravity = 0;
 			this.backgroundTwinkles.push(backgroundTwinkle);
 		}
 
@@ -520,7 +520,7 @@ play.prototype = {
 
 			this.rocket.body.velocity.x = rocket_dir * _speed * (window.innerWidth * 0.33);
 			this.rocket.body.velocity.y = -(window.innerHeight * 0.08) * _speed * this.rotCos;
-	        right_emitter.on = false;
+	        	right_emitter.on = false;
 			left_emitter.on = true;
 			this.game.time.events.add(300, function () {
 	            right_emitter.on = false;
@@ -547,7 +547,7 @@ play.prototype = {
 
 			this.rocket.body.velocity.x = rocket_dir * _speed * (window.innerWidth * 0.33);
 			this.rocket.body.velocity.y = -(window.innerHeight * 0.08) * _speed * this.rotCos;
-	        left_emitter.on = false;
+	        	left_emitter.on = false;
 			right_emitter.on = true;
 			this.game.time.events.add(300, function () {
 	            right_emitter.on = false;
