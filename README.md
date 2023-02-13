@@ -20,6 +20,3 @@ Screenshots
 Test
 -------------
 * Link: http://belogame.cafe24.com (mobile recommended.)
-
-# Creator
-* Sung-Min Kang: https://www.facebook.com/kang.sungmin.733
